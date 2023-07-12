@@ -11,7 +11,9 @@ jobs:
   Build: 
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🔨 Building ..."
+      - run: |
+          echo "🔨 Building ..."
+          echo "this is a test var: ${{ vars.JOB_NAME }}"
   Test:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
